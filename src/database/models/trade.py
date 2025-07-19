@@ -1,11 +1,11 @@
 from datetime import datetime
 from typing import Optional, List
 
-from sqlalchemy import Column, Integer, BigInteger, String, Float, Boolean, DateTime, Text, JSON, ForeignKey, Enum, Index
+from sqlalchemy import Integer, BigInteger, String, Float, DateTime, JSON, ForeignKey, Enum, Index
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from sqlalchemy.sql import func
 
-from src.config.constants import SetupType, TradingSide, PositionStatus, MarketStructure, TimeFrame
+from src.config.constants import SetupType, TradingSide, PositionStatus
 from src.database.base import Base
 from src.database.models import User, TradingPair, Signal
 
@@ -69,5 +69,5 @@ class Trade(Base):
     user: Mapped['User'] = relationship(back_populates='trades')
     pair: Mapped['TradingPair'] = relationship(back_populates='trades')
     signals: Mapped[List['Signal']] = relationship(back_populates='trades')
-    
+
 
