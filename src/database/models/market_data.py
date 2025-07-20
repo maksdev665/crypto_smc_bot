@@ -1,11 +1,11 @@
 from datetime import datetime
 from typing import Optional, List
 
-from sqlalchemy import Column, Integer, BigInteger, String, Float, Boolean, DateTime, Text, JSON, ForeignKey, Enum, Index
+from sqlalchemy import Integer, Float, DateTime, JSON, ForeignKey, Enum, Index
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from sqlalchemy.sql import func
 
-from src.config.constants import SetupType, TradingSide, OrderType, PositionStatus, MarketStructure, TimeFrame
+from src.config.constants import MarketStructure, TimeFrame
 from src.database.base import Base
 from src.database.models import TradingPair
 
